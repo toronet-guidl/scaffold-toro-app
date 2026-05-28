@@ -1,0 +1,11 @@
+{
+    "doNotCopy": [
+        "lib/",
+        "script/",
+        ".github"
+    ],
+    "postCommands": [
+        "forge install foundry-rs/forge-std",
+        "forge install OpenZeppelin/openzeppelin-contracts"
+    ]
+}

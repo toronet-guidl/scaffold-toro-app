@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+      
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+
+      - name: Run Full-stack app lint
+        run: pnpm core:lint
+
+      - name: Run Full-stack app tests
+        run: pnpm core:test
+
+      - name: Run Forge fmt
+        run: pnpm contracts:lint
+
+      - name: Run Forge build
+        run: pnpm contracts:build
+
+      - name: Run Forge tests
+        run: pnpm contracts:test

@@ -1,0 +1,11 @@
+module.exports = {
+  plugins: ["prettier-plugin-solidity"],
+  overrides: [
+    {
+      files: "*.sol",
+      options: {
+        parser: "solidity-parse",
+      },
+    },
+  ],
+};

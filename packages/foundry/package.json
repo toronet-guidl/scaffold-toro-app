@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "test": "forge test",
+        "build": "forge build",
+        "lint": "forge fmt --check",
+        "format": "forge fmt"
+    }
+}

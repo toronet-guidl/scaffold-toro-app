@@ -1,0 +1,10 @@
+{
+    "doNotCopy": [
+        "ignition/",
+        "scripts/",
+        "node_modules"
+    ],
+    "postCommands": [
+        "pnpm install"
+    ]
+}

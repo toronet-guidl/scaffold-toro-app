@@ -30,7 +30,7 @@
     "format": "pnpm workspace core format && pnpm workspace contracts format",
     "test": "pnpm workspace core test && pnpm workspace contracts test"
   },
-  "packageManager": "pnpm",
+  "packageManager": "pnpm@10.12.4",
   "engines": {
     "node": ">=20.18.3"
   }
