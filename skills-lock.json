@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "skills": {
+    "toronet-app-integrations": {
+      "source": "toronet-guidl/toronet-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/toronet-app-integrations/SKILL.md",
+      "computedHash": "4031811ab24c953b0a0ad0ff71e7cefaf1ef42eaf8acb3f2428457571263e5c3"
+    },
+    "toronet-sdk": {
+      "source": "toronet-guidl/toronet-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/toronet-sdk/SKILL.md",
+      "computedHash": "ccc9d6f33ed63fb838bc07af36c73cdc0b2edef62381d829bc744f1f7069ecce"
+    },
+    "toronet-smart-contract-deployment": {
+      "source": "toronet-guidl/toronet-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/toronet-smart-contract-deployment/SKILL.md",
+      "computedHash": "86bc1e13e766d7cfb633a9d23d5674e631aec78bb2602d87a28419c1a802050a"
+    },
+    "toronet-smart-contract-development": {
+      "source": "toronet-guidl/toronet-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/toronet-smart-contract-development/SKILL.md",
+      "computedHash": "b87da3a298fff70f443f0824d38c22d77f897b9c0293defb39a7b99757616892"
+    }
+  }
+}
