@@ -5,6 +5,7 @@
         "node_modules"
     ],
     "postCommands": [
-        "pnpm install"
+        "pnpm install",
+        "pnpm format"
     ]
 }
