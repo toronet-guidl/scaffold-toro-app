@@ -7,6 +7,7 @@
     "postCommands": [
         "forge install foundry-rs/forge-std",
         "forge install OpenZeppelin/openzeppelin-contracts",
+        "pnpm install",
         "pnpm format"
     ]
 }
