@@ -7,28 +7,28 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "pnpm workspace core dev",
-    "build": "pnpm workspace core build",
-    "start": "pnpm workspace core start",
+    "dev": "pnpm -F core dev",
+    "build": "pnpm -F core build",
+    "start": "pnpm -F core start",
 
-    "core:dev": "pnpm workspace core dev",
-    "core:build": "pnpm workspace core build",
-    "core:start": "pnpm workspace core start",
-    "core:lint": "pnpm workspace core lint",
-    "core:format": "pnpm workspace core format",
+    "core:dev": "pnpm -F core dev",
+    "core:build": "pnpm -F core build",
+    "core:start": "pnpm -F core start",
+    "core:lint": "pnpm -F core lint",
+    "core:format": "pnpm -F core format",
 
-    "compile": "pnpm workspace contracts compile",
-    "deploy": "pnpm workspace contracts deploy",
+    "compile": "pnpm -F contracts compile",
+    "deploy": "pnpm -F contracts deploy",
 
-    "contracts:compile": "pnpm workspace contracts compile",
-    "contracts:deploy": "pnpm workspace contracts deploy",
-    "contracts:lint": "pnpm workspace contracts lint",
-    "contracts:format": "pnpm workspace contracts format",
-    "contracts:test": "pnpm workspace contracts test",
+    "contracts:compile": "pnpm -F contracts compile",
+    "contracts:deploy": "pnpm -F contracts deploy",
+    "contracts:lint": "pnpm -F contracts lint",
+    "contracts:format": "pnpm -F contracts format",
+    "contracts:test": "pnpm -F contracts test",
 
-    "lint": "pnpm workspace core lint && pnpm workspace contracts lint",
-    "format": "pnpm workspace core format && pnpm workspace contracts format",
-    "test": "pnpm workspace core test && pnpm workspace contracts test"
+    "lint": "pnpm -F core lint && pnpm -F contracts lint",
+    "format": "pnpm -F core format && pnpm -F contracts format",
+    "test": "pnpm -F core test && pnpm -F contracts test"
   },
   "packageManager": "pnpm@10.12.4",
   "engines": {
