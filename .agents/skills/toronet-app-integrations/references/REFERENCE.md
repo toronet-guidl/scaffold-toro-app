@@ -1,21 +1,16 @@
 # ToroNet App Integrations Reference
 
-This file contains the working conventions and reference material for the `toronet-app-integrations` skill.
+Working conventions for the `toronet-app-integrations` skill.
 
 ## Integration model
 
-ToroNet app integrations should be split into:
-
-- read
-- write
-
-This helps the agent choose the right architecture and the right implementation path.
+Split ToroNet app integrations into read and write so the agent can choose the right architecture and implementation path.
 
 ## Network configuration
 
 ### Confirmed testnet EVM configuration
 
-Use this configuration when integrating ToroNet testnet with app libraries such as wagmi or ethers.js.
+Use this configuration with wagmi or ethers.js on ToroNet testnet.
 
 - Chain ID: `54321`
 - Name: `Toronet Testnet`
@@ -34,25 +29,23 @@ Reference asset:
 
 ### Keystore API URLs
 
-Use these URLs for ToroNet keystore API-based interactions:
+Use these URLs for ToroNet keystore API interactions:
 
 - Testnet:
   - `https://testnet.toronet.org/api/keystore/`
 - Mainnet:
   - `https://www.toronet.org/api/keystore/`
 
-These are for the ToroNet keystore API flow, not for standard EVM JSON-RPC reads with ethers.js or wagmi.
+These are for the keystore API flow, not standard EVM JSON-RPC reads with ethers.js or wagmi.
 
 ## Read integrations
 
-Read operations should be implemented with standard EVM tooling.
-
-Recommended options:
+Use standard EVM tooling.
 
 - ethers.js
 - wagmi
 
-Requirements for read operations:
+Read requirements:
 
 - correct chain configuration
 - correct RPC URL
@@ -61,9 +54,7 @@ Requirements for read operations:
 
 ### Ethers.js read pattern
 
-Use ethers.js when the user wants a direct provider-and-contract flow.
-
-Typical pattern:
+Use ethers.js for a direct provider-and-contract flow:
 
 1. create a provider using the ToroNet RPC URL
 2. create a contract instance with ABI and address
@@ -71,9 +62,7 @@ Typical pattern:
 
 ### Wagmi read pattern
 
-Use wagmi when the user is building a React app and wants hooks-based reads.
-
-Typical pattern:
+Use wagmi for React apps with hooks-based reads:
 
 1. add ToroNet testnet to the wagmi chain configuration
 2. configure transport with the ToroNet testnet RPC URL
@@ -91,7 +80,7 @@ Use this when:
 - the user should approve each transaction
 - the product wants a standard EVM wallet UX
 
-Recommended flow:
+Flow:
 
 1. prompt the user to connect an EVM wallet such as MetaMask
 2. ensure the app is connected to the ToroNet network
@@ -109,7 +98,7 @@ Use this when:
 - transaction execution is handled by the application backend
 - the app can securely manage ToroNet API credentials
 
-Recommended flow:
+Flow:
 
 1. collect the user intent in the frontend
 2. send the request to a trusted backend
@@ -157,7 +146,7 @@ Reference asset:
 
 ## Security guidance
 
-Always preserve these rules in responses:
+Always preserve these rules:
 
 - never recommend putting ToroNet keystore passwords in browser code
 - never recommend exposing admin or signing credentials in a public client

@@ -1,6 +1,6 @@
 # ToroNet Smart Contract Deployment Reference
 
-This file contains ToroNet-specific deployment guidance for the `toronet-smart-contract-deployment` skill.
+ToroNet-specific deployment guidance for the `toronet-smart-contract-deployment` skill.
 
 ## Deployment tool
 
@@ -65,7 +65,7 @@ Only mention `--token` when mainnet is involved or when the user asks about main
 
 ## Foundry projects
 
-If the contract is inside a Foundry project, builders must make sure imports remappings are properly configured in `foundry.toml` before deployment.
+If the contract is inside a Foundry project, make sure imports and remappings are properly configured in `foundry.toml` before deployment.
 
 This matters because ToroNet builders may use external dependencies such as OpenZeppelin or other libraries, and unresolved imports can block compilation or deployment preparation.
 

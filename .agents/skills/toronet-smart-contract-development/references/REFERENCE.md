@@ -1,6 +1,6 @@
 # ToroNet Smart Contract Development Reference
 
-This file contains ToroNet-specific conventions and reference material used by the `toronet-smart-contract-development` skill.
+ToroNet-specific conventions and reference material used by the `toronet-smart-contract-development` skill.
 
 ## ToroNet conventions
 

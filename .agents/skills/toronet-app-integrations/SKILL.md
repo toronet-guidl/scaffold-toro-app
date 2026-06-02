@@ -7,73 +7,29 @@ compatibility: Suitable for JavaScript or TypeScript apps using ethers.js, wagmi
 
 # toronet-app-integrations
 
-Use this skill when the user wants help integrating an application with ToroNet.
-
-This skill covers ToroNet network configuration, contract reads, and the two main write patterns used in apps:
-
-- wallet-based writes through an EVM wallet such as MetaMask
-- server-side writes through the ToroNet keystore API
-
-See [the reference guide](references/REFERENCE.md) for network details, integration patterns, security guidance, and example request structures.
-
-Relevant assets:
-
-- `assets/toronet-testnet.ts`
-- `assets/toronet-keystore-api.examples.json`
-
 ## When to use
 
-Use this skill when the user:
+Use this skill when the user wants to:
 
-- wants to configure ToroNet in a frontend or backend app
-- wants the correct ToroNet testnet network configuration
-- wants to read from ToroNet using ethers.js or wagmi
-- wants to write to ToroNet through a connected EVM wallet
-- wants to perform contract writes through the ToroNet keystore API
-- wants help deciding between wallet-based and API-based transaction flows
+- configure ToroNet in a frontend or backend app
+- use the correct ToroNet testnet network configuration
+- read from ToroNet with ethers.js or wagmi
+- write to ToroNet through a connected EVM wallet
+- perform contract writes through the ToroNet keystore API
+- decide between wallet-based and API-based transaction flows
 
-Do not use this skill for smart contract authoring, contract deployment with `toronetdeploy`, or general SDK-only workflows unless those are directly needed to complete an app integration task.
+Do not use this skill for smart contract authoring, deployment with `toronetdeploy`, or SDK-only workflows unless directly needed for app integration.
 
 ## Instructions
 
-1. Split ToroNet integrations into two categories:
-   - read
-   - write
-
-2. For read operations:
-   - prefer ethers.js or wagmi
-   - make sure the ToroNet network configuration is correct
-   - make sure the RPC URL is configured correctly
-   - use the contract ABI and address provided by the user
-
-3. For write operations, offer the correct integration path based on product needs:
-   - wallet-based write flow when the user wants the end user to approve transactions in their wallet
-   - API-based write flow when the product wants a more seamless transaction experience without repeated wallet prompts
-
-4. Treat wallet-based writes as the default client-side write pattern.
-   - ask the user to connect an EVM wallet such as MetaMask
-   - prompt the wallet when the user wants to perform a transaction
-   - keep signing and transaction approval inside the wallet flow
-
-5. Treat ToroNet keystore API writes as a backend or trusted-server pattern.
-   - do not recommend exposing ToroNet keystore credentials in the browser
-   - keep `addr`, `pwd`, ABI payloads, and transaction execution on the server
-   - mention that the credentials used for these API calls can be created and verified using the ToroNet SDK
-
-6. When working on testnet, use the provided testnet configuration and testnet keystore API URL.
-
-7. When working on mainnet:
-   - use the mainnet keystore API URL that was provided
-   - do not invent an EVM mainnet RPC configuration unless the user provides it
-
-8. If the user asks for code examples:
-   - keep them practical
-   - separate read and write examples
-   - clearly label whether a write example is wallet-based or API-based
-
-9. Keep answers focused on integration.
-   - do not turn the response into a smart contract development guide
-   - do not turn the response into a deployment guide
+1. Split ToroNet integrations into read and write.
+2. For reads, use ethers.js or wagmi, ensure the ToroNet network and RPC URL are correct, and use the contract ABI and address provided by the user.
+3. For writes, choose the path that matches the product need: wallet-based when the end user should approve transactions in their wallet, API-based when the product needs a more seamless experience without repeated wallet prompts.
+4. Treat wallet-based writes as the default client-side write pattern: ask the user to connect an EVM wallet such as MetaMask, prompt the wallet for transactions, and keep signing and approval inside the wallet flow.
+5. Treat ToroNet keystore API writes as a backend or trusted-server pattern: do not expose ToroNet keystore credentials in the browser, keep `addr`, `pwd`, ABI payloads, and transaction execution on the server, and note that the credentials used for these API calls can be created and verified using the ToroNet SDK.
+6. When working on testnet, use the provided testnet configuration and testnet keystore API URL; on mainnet, use the provided mainnet keystore API URL and do not invent an EVM mainnet RPC configuration unless the user provides it.
+7. If the user asks for code examples, keep them practical, separate read and write examples, and clearly label whether a write example is wallet-based or API-based.
+8. Keep answers focused on integration, not smart contract development or deployment.
 
 ## Default workflow
 
@@ -81,25 +37,20 @@ Do not use this skill for smart contract authoring, contract deployment with `to
 2. Determine whether the app is frontend-only or has a backend.
 3. Configure ToroNet network access first.
 4. For reads, use ethers.js or wagmi with the correct RPC URL.
-5. For writes, choose between wallet-based or API-based execution.
-6. If the user wants API-based writes, move the transaction logic to a trusted backend.
-7. Return code or architecture guidance that matches the chosen integration pattern.
+5. For writes, choose between wallet-based or API-based execution; if API-based, move the transaction logic to a trusted backend.
+6. Return code or architecture guidance that matches the chosen integration pattern and include a short security note when API-based writes are involved.
 
-## Output expectations
+## Checks
 
-When this skill is active, the response should usually include:
-
-- a short summary of the integration task
-- the relevant ToroNet network configuration
-- the recommended read or write pattern
-- code or architecture guidance
-- a short security note when API-based writes are involved
-
-## Common checks
-
-- correct RPC URL is used
-- correct chain ID is used
+- correct RPC URL and chain ID are used
 - ABI and contract address are present
-- wallet-based writes are done through an EVM wallet
-- API-based writes are done from a trusted backend
+- wallet-based writes use an EVM wallet
+- API-based writes come from a trusted backend
 - ToroNet keystore credentials are not exposed in client-side code
+
+See [the reference guide](references/REFERENCE.md) for network details, integration patterns, security guidance, and example request structures.
+
+Relevant assets:
+
+- `assets/toronet-testnet.ts`
+- `assets/toronet-keystore-api.examples.json`

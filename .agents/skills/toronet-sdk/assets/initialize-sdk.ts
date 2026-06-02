@@ -1,6 +1,5 @@
 import { initializeSDK } from "torosdk";
 
-// Testnet
 initializeSDK({ network: "testnet" });
 
 // Mainnet

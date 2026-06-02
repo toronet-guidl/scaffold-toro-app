@@ -1,12 +1,10 @@
 # ToroSDK Reference
 
-This file contains practical guidance for the `toronet-sdk` skill.
+Practical guidance for the `toronet-sdk` skill.
 
 ## What ToroSDK is for
 
-ToroSDK is a TypeScript-based toolkit for interacting with the ToroNet blockchain.
-
-Use it when the task involves ToroNet-specific SDK workflows such as:
+ToroSDK is a TypeScript toolkit for ToroNet-specific workflows such as:
 
 - wallet creation and import
 - wallet password verification
@@ -63,7 +61,7 @@ initializeSDK({
 
 Important behavior:
 
-* the SDK supports both testnet and mainnet
+* the SDK supports testnet and mainnet
 * if the SDK is not configured, it defaults to mainnet
 * API calls use the configured network automatically
 
@@ -76,7 +74,7 @@ Use ToroSDK for wallet and credential-related tasks such as:
 * verifying wallet password integrity
 * retrieving a wallet key
 
-These flows are useful when the user needs ToroNet credentials that may later be used in trusted backend flows.
+These flows are useful when the user needs ToroNet credentials for trusted backend flows.
 
 ### Create a wallet
 

@@ -1,29 +1,35 @@
 {
   "version": 1,
   "skills": {
+    "daisyui": {
+      "source": "saadeghi/daisyui",
+      "sourceType": "github",
+      "skillPath": "skills/daisyui/SKILL.md",
+      "computedHash": "f568276850fa2ed748b7544ab8773f760dee886d2287711d9c6c6b0c825ffe17"
+    },
     "toronet-app-integrations": {
       "source": "toronet-guidl/toronet-agent-skills",
       "sourceType": "github",
       "skillPath": "skills/toronet-app-integrations/SKILL.md",
-      "computedHash": "4031811ab24c953b0a0ad0ff71e7cefaf1ef42eaf8acb3f2428457571263e5c3"
+      "computedHash": "ecd7133905e458ef2c15853235be724a5f57cabd82cc2d42728bb1a4e38f46af"
     },
     "toronet-sdk": {
       "source": "toronet-guidl/toronet-agent-skills",
       "sourceType": "github",
       "skillPath": "skills/toronet-sdk/SKILL.md",
-      "computedHash": "ccc9d6f33ed63fb838bc07af36c73cdc0b2edef62381d829bc744f1f7069ecce"
+      "computedHash": "4cd801053c7022fb6bc586ae8b7baf7f9bdddc74a8bd8db931654fc97bbb0183"
     },
     "toronet-smart-contract-deployment": {
       "source": "toronet-guidl/toronet-agent-skills",
       "sourceType": "github",
       "skillPath": "skills/toronet-smart-contract-deployment/SKILL.md",
-      "computedHash": "86bc1e13e766d7cfb633a9d23d5674e631aec78bb2602d87a28419c1a802050a"
+      "computedHash": "f71759469f4ba8936f2c5e04346dd5ade59257b230eac93fa41a4527b28cd693"
     },
     "toronet-smart-contract-development": {
       "source": "toronet-guidl/toronet-agent-skills",
       "sourceType": "github",
       "skillPath": "skills/toronet-smart-contract-development/SKILL.md",
-      "computedHash": "b87da3a298fff70f443f0824d38c22d77f897b9c0293defb39a7b99757616892"
+      "computedHash": "bfc65c4cc1aace27623ec8e2e31ff15e7bbecc7797ae884d22b33f45de33e910"
     }
   }
 }
