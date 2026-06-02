@@ -23,7 +23,7 @@
       "source": "toronet-guidl/toronet-agent-skills",
       "sourceType": "github",
       "skillPath": "skills/toronet-smart-contract-deployment/SKILL.md",
-      "computedHash": "f71759469f4ba8936f2c5e04346dd5ade59257b230eac93fa41a4527b28cd693"
+      "computedHash": "662b75b8030a39e26b7e96327431b2bebc998f66452707a8f51b0b7b398346cf"
     },
     "toronet-smart-contract-development": {
       "source": "toronet-guidl/toronet-agent-skills",

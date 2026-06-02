@@ -12,7 +12,7 @@ compatibility: Requires Node.js with npx. Foundry projects should have remapping
 Use this skill when the user wants to:
 
 - deploy a Solidity contract to ToroNet
-- get the correct `toronetdeploy` command
+- get the correct `toronetdeploy` command or library usage
 - pass `--owner`, `--args`, or `--network`
 - deploy from a Foundry project and configure remappings
 - understand when `--token` is required
@@ -22,22 +22,24 @@ Do not use this skill for writing the contract itself, frontend integration, or 
 
 ## Instructions
 
-1. Treat `toronetdeploy` as the default ToroNet deployment path and build commands around the documented `npx toronetdeploy` workflow.
-2. Make sure the user provides the Solidity file path, contract name, owner address, constructor arguments if needed, and target network.
-3. Default the network to `testnet` unless the user explicitly asks for mainnet.
-4. If the user is deploying to mainnet, mention that `--token` is required and is obtained from the ToroNet team.
-5. If the contract comes from a Foundry project, make sure imports and remappings are properly configured in `foundry.toml` before deployment.
-6. Prefer copyable commands.
-7. If the user provides incomplete deployment details, preserve the ToroNet deployment pattern and show a realistic command template with placeholders.
-8. Keep the answer focused on deployment unless the user explicitly asks for contract design or integration help.
+1. Treat `toronetdeploy` as the default ToroNet deployment path and support both CLI (`npx toronetdeploy`) and library usage (`deployContract`).
+2. For CLI usage, make sure the user provides the Solidity file path, contract name, owner address, constructor arguments if needed, and target network.
+3. For library usage, use the same fields as options and show CommonJS or ESM imports when requested.
+4. Default the network to `testnet` unless the user explicitly asks for mainnet.
+5. If the user is deploying to mainnet, mention that `--token` is required and is obtained from the ToroNet team.
+6. If the contract comes from a Foundry project, make sure imports and remappings are properly configured in `foundry.toml` before deployment.
+7. Prefer copyable commands or code samples.
+8. If the user provides incomplete deployment details, preserve the ToroNet deployment pattern and show a realistic template with placeholders.
+9. Keep the answer focused on deployment unless the user explicitly asks for contract design or integration help.
 
 ## Default workflow
 
 1. Identify the contract file and contract name.
 2. Confirm the owner address.
 3. Determine whether constructor arguments are required and the target network.
-4. Check whether the contract comes from a Foundry project; if so, remind the user to verify remappings in `foundry.toml`.
-5. Produce the correct `toronetdeploy` command and add only the ToroNet-specific notes needed for successful deployment.
+4. Determine whether the user wants CLI or library usage.
+5. Check whether the contract comes from a Foundry project; if so, remind the user to verify remappings in `foundry.toml`.
+6. Produce the correct `toronetdeploy` command or `deployContract` usage and add only the ToroNet-specific notes needed for successful deployment.
 
 ## Checks
 

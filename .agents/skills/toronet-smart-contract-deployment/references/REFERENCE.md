@@ -6,6 +6,14 @@ ToroNet-specific deployment guidance for the `toronet-smart-contract-deployment`
 
 Deployments to ToroNet should be done using `toronetdeploy`.
 
+## Install
+
+Library install:
+
+```bash
+npm install toronetdeploy
+```
+
 Preferred usage pattern:
 
 ```bash
@@ -14,6 +22,46 @@ npx toronetdeploy --file contracts/MyToken.sol --contract MyToken \
 ```
 
 Use `npx` so the user does not need a global install.
+
+## Library usage
+
+CommonJS:
+
+```js
+const { deployContract } = require('toronetdeploy');
+
+async function run() {
+  const { address, abi } = await deployContract({
+    file: 'contracts/MyToken.sol',
+    contract: 'MyToken',
+    owner: '0xYourOwnerAddress',
+    args: ['0xabc...', '1000'],
+    network: 'testnet',
+  });
+
+  console.log('Deployed at:', address);
+  console.log('ABI:', abi);
+}
+
+run().catch(console.error);
+```
+
+ESM:
+
+```js
+import { deployContract } from 'toronetdeploy';
+
+const { address, abi } = await deployContract({
+  file: 'contracts/MyToken.sol',
+  contract: 'MyToken',
+  owner: '0xYourOwnerAddress',
+  args: ['0xabc...', '1000'],
+  network: 'testnet',
+});
+
+console.log('Deployed at:', address);
+console.log('ABI:', abi);
+```
 
 ## Supported command options
 
