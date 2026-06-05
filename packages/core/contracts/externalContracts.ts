@@ -4,7 +4,7 @@ import { GenericContractsDeclaration } from "@/types/contract";
  * @example
  * const externalContracts = {
  *   testnet: {
- *     DAI: {
+ *     YieldContract: {
  *       address: "0x...",
  *       abi: [...],
  *       external: true
