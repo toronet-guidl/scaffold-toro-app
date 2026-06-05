@@ -3,7 +3,6 @@
         "test": "forge test",
         "build": "forge build",
         "compile": "forge build",
-        "deploy": "TODO: add deploy script",
         "lint": "forge fmt --check",
         "format": "forge fmt"
     }

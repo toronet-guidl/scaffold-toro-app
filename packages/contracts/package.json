@@ -1,8 +1,12 @@
 {
-    "name": "contracts",
-    "version": "1.0.0",
-    "private": true,
-    "dependencies": {
-        "toronetdeploy": "^3.0.1"
-    }
+  "name": "contracts",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "node scripts/deploy.js"
+  },
+  "dependencies": {
+    "json5": "^2.2.3",
+    "toronetdeploy": "^3.0.1"
+  }
 }
