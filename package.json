@@ -18,10 +18,10 @@
     "core:format": "pnpm -F core format",
 
     "compile": "pnpm -F contracts compile",
-    "deploy": "pnpm -F contracts deploy",
+    "deploy": "pnpm -F contracts run deploy",
 
     "contracts:compile": "pnpm -F contracts compile",
-    "contracts:deploy": "pnpm -F contracts deploy",
+    "contracts:deploy": "pnpm -F contracts run deploy",
     "contracts:lint": "pnpm -F contracts lint",
     "contracts:format": "pnpm -F contracts format",
     "contracts:test": "pnpm -F contracts test",

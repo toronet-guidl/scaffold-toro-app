@@ -5,7 +5,7 @@ export type GenericContract = {
   owner: Address;
   address: Address;
   abi: Abi;
-  external?: true;
+  external?: boolean;
 };
 
 type Network = "testnet" | "mainnet";

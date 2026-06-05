@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {Ownable} from "./lib/Ownable.sol";
+import {Ownable} from "src/lib/Ownable.sol";
 
 contract Counter is Ownable {
     uint256 public number;

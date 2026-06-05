@@ -29,7 +29,7 @@ contract CounterTest is Test {
         assertEq(result, initial + x);
     }
 
-    function test_Add(uint256 a, uint256 b) public {
+    function test_Add(uint256 a, uint256 b) public view {
         uint256 result = counter.add(a, b);
         assertEq(result, a + b);
     }

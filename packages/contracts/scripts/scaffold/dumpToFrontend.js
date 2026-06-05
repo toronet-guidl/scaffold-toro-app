@@ -1,8 +1,22 @@
 const fs = require("fs");
 const json5 = require("json5");
 
+/**
+ * @typedef {Object} ContractDetails
+ * @property {'testnet'|'mainnet'} [network] - Defaults to 'testnet'
+ * @property {Object} abi - Deployed contract ABI
+ * @property {string} contractName - Contract name to deploy
+ * @property {string} owner - Owner wallet address
+ * @property {string} address - Deployed contract address
+ */
+
+/**
+ * Compiles and deploys a Solidity contract.
+ * @param {ContractDetails} contractDetails
+ * @returns {void}
+ */
 function dumpContractDetailsToFrontendModule(contractDetails) {
-  const { network, contractName, abi, address, owner } = contractDetails;
+  const { network = "testnet", contractName, abi, address, owner } = contractDetails;
   const newContract = {
     [contractName]: {
       owner,
@@ -11,11 +25,11 @@ function dumpContractDetailsToFrontendModule(contractDetails) {
       external: false,
     },
   };
+  const JSON_DUMP_FILE = "../core/contracts/deployedContracts.jsonc";
+  const TYPESCRIPT_DUMP_FILE = "../core/contracts/deployedContract.ts";
 
   // read deployedContracts.jsonc to see the previously deployed contracts
-  const deployedContracts = json5.parse(
-    fs.readFileSync("../core/contracts/deployedContracts.jsonc", { encoding: "utf8" }),
-  );
+  const deployedContracts = json5.parse(fs.readFileSync(JSON_DUMP_FILE, { encoding: "utf8" }));
 
   // merged with new contract deployments
   const newContracts = { ...deployedContracts, ...{ [network]: { ...deployedContracts[network], ...newContract } } };
@@ -31,7 +45,8 @@ const deployedContracts = ${JSON.stringify(newContracts, null, 2)} as const;
 
 export default deployedContracts satisfies GenericContractsDeclaration;
 `;
-  fs.writeFileSync("../core/contracts/deployedContract.ts", content, { encoding: "utf8" });
+
+  fs.writeFileSync(TYPESCRIPT_DUMP_FILE, content, { encoding: "utf8" });
 
   // write to deployedContracts.json
   const jsonContent = `/**
@@ -41,7 +56,7 @@ export default deployedContracts satisfies GenericContractsDeclaration;
 
 ${JSON.stringify(newContracts, null, 2)}
 `;
-  fs.writeFileSync("../core/contracts/deployedContracts.json", jsonContent, { encoding: "utf8" });
+  fs.writeFileSync(JSON_DUMP_FILE, jsonContent, { encoding: "utf8" });
 }
 
 module.exports = {

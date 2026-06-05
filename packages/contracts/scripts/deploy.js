@@ -9,9 +9,13 @@ const NETWORK = "testnet";
 const TOKEN = ""; // Required for Mainnet deployment, can be left empty for testnet
 
 async function main() {
-  if (OWNER === "<Owner Address>") {
-    console.error("Please update the owner address in the deploy script before running.");
-    console.error(`Go here ${path.resolve(__filename)} to update the owner address.`);
+  if (!OWNER || OWNER === "<Owner Address>") {
+    console.error("");
+    console.error("Owner Address not set");
+    console.error("");
+    console.error("Update the owner address in the deploy script before deploying contracts.");
+    console.error(`Go to contracts/scripts/deploy.js to update the owner address.`);
+    console.error("");
     process.exit(1);
   }
 
@@ -28,7 +32,13 @@ async function main() {
 
   /// Sharing contract details with the frontend
   console.log("Writing deployed contract to deployedContract.ts");
-  dumpContractDetailsToFrontendModule();
+  dumpContractDetailsToFrontendModule({
+    network: NETWORK,
+    abi: contract.abi,
+    address: contract.address,
+    contractName: CONTRACT_NAME,
+    owner: OWNER,
+  });
 }
 
 main()
