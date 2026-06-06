@@ -14,8 +14,8 @@ importers:
         specifier: ^2.2.3
         version: 2.2.3
       toronetdeploy:
-        specifier: ^3.0.1
-        version: 3.0.1
+        specifier: ^3.1.2
+        version: 3.1.2
 
   packages/core:
     dependencies:
@@ -2673,8 +2673,8 @@ packages:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
 
-  toronetdeploy@3.0.1:
-    resolution: {integrity: sha512-HdoA+XbPBqMBKc8H2LRL/5VedXuJhltcXKV5eca+TUFSB8vpZ7WIHmNmciupGgX9pIg2+qRC7EQdJKD/L/4wTQ==}
+  toronetdeploy@3.1.2:
+    resolution: {integrity: sha512-HJdX/9e3z/OmuRUgKDLJV+DiXi/Jz3L6dVhB9FMyHBaIXOlicvp0QKE3/2yVG6XuCJgX9kqvVUbTPsYAjmjmYA==}
     hasBin: true
 
   torosdk@0.2.0:
@@ -5698,8 +5698,9 @@ snapshots:
     dependencies:
       is-number: 7.0.0
 
-  toronetdeploy@3.0.1:
+  toronetdeploy@3.1.2:
     dependencies:
+      ethereum-cryptography: 2.2.1
       solc: 0.8.35
       torosdk: 0.2.0
     transitivePeerDependencies:
